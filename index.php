@@ -1,2 +1,2 @@
 <?php 
-print 'Veikia Rolandas!';
+print "Veikia su Git!";

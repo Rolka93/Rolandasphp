@@ -1,75 +1,92 @@
 <?php
+$txt = "Hello world!";
+$x = 5;
+$y = 10.5;
 
-date_default_timezone_set("Europe/Vilnius")
+echo $txt;
+echo "<br>";
+echo $x;
+echo "<br>";
+echo $y;
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>phpsualum</title>   
+    </head>
+    <body>
+        <br>
+        <img src="https://upload.wikimedia.org/wikipedia/lt/thumb/f/f4/The_Scream.jpg/250px-The_Scream.jpg" alt="Smiley face" height="42" width="42"> 
+        <img src="https://upload.wikimedia.org/wikipedia/lt/thumb/f/f4/The_Scream.jpg/250px-The_Scream.jpg" alt="Smiley face" height="42" width="42"> 
+        <img src="https://upload.wikimedia.org/wikipedia/lt/thumb/f/f4/The_Scream.jpg/250px-The_Scream.jpg" alt="Smiley face" height="42" width="42"> 
+        <img src="https://upload.wikimedia.org/wikipedia/lt/thumb/f/f4/The_Scream.jpg/250px-The_Scream.jpg" alt="Smiley face" height="42" width="42"> 
+    </body>
+<?php
+$date = new DateTime('2018-09-17'); // Y-m-d
+$date->add(new DateInterval('P30D'));
+echo $date->format('Y-m-d') . "\n";
+echo "<br>";
+?>
+ <?php
+
+$sunny= rand(0,1);$cssClass = null;
+
+$weather = null;// if ($sunny == true)
+
+// if ($sunny == 1)
+
+if ($sunny) {
+
+   $cssClass = "sunny";
+
+   $weather = 'saulyte';
+
+} else {
+
+   $cssClass = "notsunny";
+
+   $weather = 'lietutis';
+
+}
+
 ?>
 
+<html>
 
    <head>
 
-       <title> Aš valdau HTML <?php print 'ir PHP!' ?>
+       <title>
+
+           IF testas
 
        </title>
 
-   </head>    <body>
+       <style>
 
-       <h1>Rolandas- HTML <?php print 'ir PHP!' ?> asas</h1>
-<p>Moku kurti dinamini turinį.
-           Atidaryta: <?php print date ('Y-m-d H:i:s'); ?> </p>
+           .sunny {
+
+               background-color: yellow;
+
+           }
+
+           .notsunny {
+
+               background-color: grey;
+
+           }
+
+       </style>
+
+   </head>
+
+   <body>
+
+       <div class="<?php print $cssClass;?>">
+
+           <?php print $weather; ?>
+
+       </div>
 
    </body>
 
 </html>
-<?php
-
-//header("Refresh:1");
-
-//VLN laiko juosta
-
-date_default_timezone_set('Europe/Vilnius');
-
-/*Ir visa
-
-* Kita matematika
-
-*/
-
-$vaikai = rand(1, 5);
-
-$random = rand( strtotime("Oct 16 2018"), strtotime("Oct 16 2028") );
-
-$random2 = rand( strtotime("Oct 16 2021"), strtotime("Oct 16 2121") );
-
-$title = 'PHP lydes ir '.date('Y-m-d',$random);
-
-$h1 = 'Rolandas - Galbut turesiu '.$vaikai.' vaiku!';
-
-$paragraph = 'D. Trump`as nebus prezidentu '.date('Y-m-d',$random);$html = '<!DOCTYPE html>
-
-<!--Pagrindine nesamone
-
-<p>Nieko nera</p>
-
--->
-
-<html lang="en" dir="ltr">
-
-<head>
-
-<meta charset="utf-8">
-
-<title>'.$title.'</title>
-
-</head>
-
-<body>
-
-<h1>'.$h1.'</h1>
-
-<p>'.$paragraph.'</p>
-<?php
-</body>';
-
-die ($html);
-?>
-
-    

@@ -1,83 +1,12 @@
-<?php //
+<?Php
+$distance = rand(0,300);
+$fuel_cons = 7.5; // Kiek litru sunaudojama 100 km.
+$fuel_price = 1.3;//Litro kaina
+$my_money = 100; //Kiek turime pinigu
+$sunaudos = $fuel_cons/100*$distance; //Kiek llitru reikia kelioneje
+$kaina =$sunaudos*$fuel_price;
 
-$sunny= rand(0,1);
 
-$cssClass = null;
-
-$weather = null;
-
-$rain = rand(0, 1);// if ($sunny == true)
-
-// if ($sunny == 1)If ($sunny && $rain){
-
-If ($sunny && $rain){
-
-   $weather = 'saule su debeseliu';
-
-   $cssClass = 'sunny';
-
-}
-
-elseIf ($sunny && !$rain){
-
-    $weather = 'saule';
-
-    $cssClass = 'sunny';
-
-}
-
-elseif (!$sunny && $rain) {
-
-   $weather = 'debesys su lietum';
-
-   $cssClass = 'notsunny';
-
-}
-
-else{
-
-   $weather = 'debesis';
-
-   $cssClass = 'notsunny';
-
-}
+print "nuvaziavus $distance km,masina sunaudos $sunaudos l. visa tai kainuos $kaina ";
 
 ?>
-
-<html>
-
-  <head>
-
-      <title>
-
-          IF testas
-
-      </title>
-
-      <style>
-
-          .sunny {
-
-              background-color: yellow;
-
-          }
-
-          .notsunny {
-
-              background-color: grey;
-
-          }
-
-      </style>
-
-  </head>
-
-  <body>
-
-      <div class="<?php print $cssClass;?>">
-
-          <?php print $weather; ?>
-
-      </div>   </body>
-
-</html>

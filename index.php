@@ -1,51 +1,44 @@
-<?php
-$txt = "Hello world!";
-$x = 5;
-$y = 10.5;
+<?php //
 
-echo $txt;
-echo "<br>";
-echo $x;
-echo "<br>";
-echo $y;
-?>
-<!DOCTYPE html>
-<html>
-    <head>
-      <title>phpsualum</title>   
-    </head>
-    <body>
-        <br>
-        <img src="https://upload.wikimedia.org/wikipedia/lt/thumb/f/f4/The_Scream.jpg/250px-The_Scream.jpg" alt="Smiley face" height="42" width="42"> 
-        <img src="https://upload.wikimedia.org/wikipedia/lt/thumb/f/f4/The_Scream.jpg/250px-The_Scream.jpg" alt="Smiley face" height="42" width="42"> 
-        <img src="https://upload.wikimedia.org/wikipedia/lt/thumb/f/f4/The_Scream.jpg/250px-The_Scream.jpg" alt="Smiley face" height="42" width="42"> 
-        <img src="https://upload.wikimedia.org/wikipedia/lt/thumb/f/f4/The_Scream.jpg/250px-The_Scream.jpg" alt="Smiley face" height="42" width="42"> 
-    </body>
-<?php
-$date = new DateTime('2018-09-17'); // Y-m-d
-$date->add(new DateInterval('P30D'));
-echo $date->format('Y-m-d') . "\n";
-echo "<br>";
-?>
- <?php
+$sunny= rand(0,1);
 
-$sunny= rand(0,1);$cssClass = null;
+$cssClass = null;
 
-$weather = null;// if ($sunny == true)
+$weather = null;
 
-// if ($sunny == 1)
+$rain = rand(0, 1);// if ($sunny == true)
 
-if ($sunny) {
+// if ($sunny == 1)If ($sunny && $rain){
 
-   $cssClass = "sunny";
+If ($sunny && $rain){
 
-   $weather = 'saulyte';
+   $weather = 'saule su debeseliu';
 
-} else {
+   $cssClass = 'sunny';
 
-   $cssClass = "notsunny";
+}
 
-   $weather = 'lietutis';
+elseIf ($sunny && !$rain){
+
+    $weather = 'saule';
+
+    $cssClass = 'sunny';
+
+}
+
+elseif (!$sunny && $rain) {
+
+   $weather = 'debesys su lietum';
+
+   $cssClass = 'notsunny';
+
+}
+
+else{
+
+   $weather = 'debesis';
+
+   $cssClass = 'notsunny';
 
 }
 
@@ -53,40 +46,38 @@ if ($sunny) {
 
 <html>
 
-   <head>
+  <head>
 
-       <title>
+      <title>
 
-           IF testas
+          IF testas
 
-       </title>
+      </title>
 
-       <style>
+      <style>
 
-           .sunny {
+          .sunny {
 
-               background-color: yellow;
+              background-color: yellow;
 
-           }
+          }
 
-           .notsunny {
+          .notsunny {
 
-               background-color: grey;
+              background-color: grey;
 
-           }
+          }
 
-       </style>
+      </style>
 
-   </head>
+  </head>
 
-   <body>
+  <body>
 
-       <div class="<?php print $cssClass;?>">
+      <div class="<?php print $cssClass;?>">
 
-           <?php print $weather; ?>
+          <?php print $weather; ?>
 
-       </div>
-
-   </body>
+      </div>   </body>
 
 </html>

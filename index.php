@@ -1,49 +1,29 @@
 <?php
 
-$x = 10;
+$months = 12;
 
-$y = 2;
+$starting_money = 1000;
 
-$kiekis = $x;
+$alga = 700;
 
-$i = null;
+$islaidos = rand(50,500);//kiekv.men
 
-for ($i = 0; $x < 20; $i++) {
+$alga12 = $alga*$months;//12 men alga
 
-    $text = print nl2br("Dabartinė \$x vertė: $x\n");
+$išlaidos12=išlaidos*$months;//12 men išlaidos
+ 
+$likutis =$starting_money+$alga12-$išlaidos12;
+  
+$v_išlaidos 
 
-    $x += $y;
-
-}
-
-if ($x>=20) {
-
-    print 'Ciklas nutrauktas';
-
-}
-
+ for ($i = 0; $i < 12; $i++) {       
 ?>
 
 <html>
-
     <head>
-
-        <title>Trecia užduotis</title>
-
-    </head>
-
+        <title> Ketvirta užduotis </title>
+    </head>      
     <body>
-
-        <p>
-
-            <?php
-
-            $text;
-
-            ?>
-
-        </p>
-
+        <?php print "per $months progrozuotų mėnesių,vid.išlaidos $v_išlaidos .Likutis pabaigojegoje  "
     </body>
-
 </html>

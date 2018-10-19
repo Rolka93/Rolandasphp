@@ -1,18 +1,49 @@
 <?php
+
 $x = 10;
+
 $y = 2;
-$p = "";
-for ($i = 0; $i < 10; $i++) {
+
+$kiekis = $x;
+
+$i = null;
+
+for ($i = 0; $x < 20; $i++) {
+
+    $text = print nl2br("Dabartinė \$x vertė: $x\n");
+
     $x += $y;
-    $p .= 'Dabartine $x verte: ' . $x . '<br>';
+
 }
+
+if ($x>=20) {
+
+    print 'Ciklas nutrauktas';
+
+}
+
 ?>
-<html lang="lt">
+
+<html>
+
     <head>
+
+        <title>Trecia užduotis</title>
+
     </head>
+
     <body>
+
         <p>
-            <?php print $p; ?>
+
+            <?php
+
+            $text;
+
+            ?>
+
         </p>
+
     </body>
+
 </html>

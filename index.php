@@ -1,29 +1,35 @@
 <?php
 
-$months = 12;
+$fridge = array("Jogurtas", "Kebabas", "Alus", "Sugede vaisiai", "supuves avokadas");
 
-$starting_money = 1000;
+$noriu = ["Kebabas", "Alus", "Pica", "traktorius"];
 
-$alga = 700;
+$tekstas = "";
 
-$islaidos = rand(50,500);//kiekv.men
+foreach ($noriu as $kazkas) {
 
-$alga12 = $alga*$months;//12 men alga
+    if (in_array($kazkas, $fridge)) {
 
-$išlaidos12=išlaidos*$months;//12 men išlaidos
- 
-$likutis =$starting_money+$alga12-$išlaidos12;
-  
-$v_išlaidos 
+        $tekstas .= "$kazkas: Turiu <br>";
 
- for ($i = 0; $i < 12; $i++) {       
+    } else {
+
+        $tekstas .= "$kazkas: Neturiu <br>";
+
+    }
+
+}
+
 ?>
 
 <html>
-    <head>
-        <title> Ketvirta užduotis </title>
-    </head>      
+
     <body>
-        <?php print "per $months progrozuotų mėnesių,vid.išlaidos $v_išlaidos .Likutis pabaigojegoje  "
+
+        <h1>Ar viska turiu saldytuve?</h1>
+
+        <p><?php print $tekstas; ?></p>
+
     </body>
-</html>
+
+</html

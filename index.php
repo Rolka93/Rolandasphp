@@ -1,24 +1,14 @@
 <?php
 
-$fridge = array("Jogurtas", "Kebabas", "Alus", "Sugede vaisiai", "supuves avokadas");
 
-$noriu = ["Kebabas", "Alus", "Pica", "traktorius"];
 
-$tekstas = "";
+function add($x, $y) {
 
-foreach ($noriu as $kazkas) {
-
-    if (in_array($kazkas, $fridge)) {
-
-        $tekstas .= "$kazkas: Turiu <br>";
-
-    } else {
-
-        $tekstas .= "$kazkas: Neturiu <br>";
-
-    }
+    return $text = $x . ' * ' . $y . ' Product: ' . $x*$y;
 
 }
+
+
 
 ?>
 
@@ -26,10 +16,8 @@ foreach ($noriu as $kazkas) {
 
     <body>
 
-        <h1>Ar viska turiu saldytuve?</h1>
-
-        <p><?php print $tekstas; ?></p>
+        <?php print add(7,3); ?>
 
     </body>
 
-</html
+</html>

@@ -1,40 +1,63 @@
 <?php
-$catalog = ['miltai'.'pienas'.'kiaušiniai'];
-$tekst =''; 
-?>
- <!DOCTYPE html>
-<html>
-<head>
-<style>
-.produktas {
-   width: 150px;
-   height: 150px; 
+
+$output = 'Dar nesubmit\'inai formos';
+
+$variantai = [
+
+    'taip',
+
+    'ne',
+
+    'galbut'
+
+];
+
+function rand_atsakymas($array) {
+
+    $indexas = rand(0, count($array) - 1);
+
+    return $array[$indexas];
+
 }
-</style>
-</head>
 
-<body>
+if (isset($_POST['klausimas'])) {
 
-<div class="produktas">
-  <h2>Miltai</h2>
-  <span class="">Kaina</span><br
-  <span class="">Aprašymas</span><br>
-  <span class="">Nuolaida</span><br>
-</div>
+    $klausimas = $_POST['klausimas'];
 
-<div class="produktas">
-  <h2>Pienas</h2>
-  <span class="">Kaina</span><br>
-  <span class="">Aprašymas </span><br>
-  <span class="">Nuolaida</span><br>
-</div>
+    if (empty($klausimas)) {
 
-<div class="produktas">
-  <h2>Kiaušiniai</h2> 
-  <span class="">Kaina</span><br>
-  <span class="">Aprašymas</span><br>
-  <span class="">Nuolaida</span><br>
-</div>
-    <p><?php print $tekst; ?></p>
-</body>
-</html> 
+        $output = 'neirasete klausimo';
+
+    } else {
+
+        $output = 'atsakymas i jusu klausima (' . $klausimas . ') - ' . rand_atsakymas($variantai);
+
+    }
+
+}
+
+?>
+
+<html>
+
+    <head>
+
+        <title>Atsakymu randomas</title>
+
+    </head>
+
+    <body>
+
+        <form action="index.php" method="post">
+
+            Jusu klausimas: <input name="klausimas" type="text">
+
+            <input type="submit">
+
+        </form>
+
+        <h3><?php print $output; ?></h3>
+
+    </body>
+
+</html>
